@@ -40,8 +40,12 @@
     height: 100%;
     object-fit: cover;
     z-index: 1;
+    opacity: 0;
+    transition: opacity 0.25s;
 }
 
 .carrousel__img--visible {
-    z-index: 3;
+    opacity: 1;
+    transition: opacity 0.25s;
 }
+
