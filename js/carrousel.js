@@ -76,6 +76,24 @@
         carrousel__input[id].dispatchEvent(new Event('change'))
     })
 
+    galerie__img.forEach(function(elm){
+        elm.addEventListener('click', function(){
+            let id = 0
+            let carrousel__img = carrousel__figure.querySelectorAll('.carrousel__img')
+            for (const [index, elm] of Array.from(carrousel__img).entries()) {
+                if(elm.src === this.src){
+                    id = index
+                    break
+                }
+            }
+            let carrousel__form = document.querySelector('.carrousel__form');
+            let carrousel__input = carrousel__form.querySelectorAll('.carrousel__input');
+            carrousel__input[id].checked = true
+            carrousel__input[id].dispatchEvent(new Event('change'))
+            carrousel.classList.add('carrousel--ouvrir')
+        })
+    })
+
     bouton.addEventListener('mousedown', function(){
         carrousel.classList.add('carrousel--ouvrir')
     })
