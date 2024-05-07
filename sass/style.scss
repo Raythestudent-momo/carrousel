@@ -23,8 +23,33 @@
     z-index: 10;
 }
 
+.carrousel__x:hover {
+    background-color: rgba(0,0,0,.2);
+}
+
 .carrousel--ouvrir {
     transform: scale(1);
+}
+
+@media screen and (max-width: 768px){
+    .carrousel--ouvrir {
+        width: 100%;
+        height: 100%;
+        top: 250px;
+        left: 0;
+    }
+
+    .carrousel__img {
+        object-fit: contain;
+    }
+
+    .carrousel__precedent, .carrousel__suivant {
+        padding: 10px;
+    }
+
+    .carrousel__x {
+        padding: 10px;
+    }
 }
 
 .carrousel__figure {
@@ -49,3 +74,29 @@
     transition: opacity 0.25s;
 }
 
+.carrousel__precedent, .carrousel__suivant {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 3;
+}
+
+.carrousel__precedent {
+    left: 0;
+}
+
+.carrousel__suivant {
+    right: 0;
+}
+
+.carrousel__precedent, .carrousel__suivant {
+    padding: 5px;
+    border: 1px solid rgb(244, 255, 87);
+    color: rgb(244, 255, 87);
+    background-color: rgba(0,0,0,.1);
+}
+
+.carrousel__precedent:hover, .carrousel__suivant:hover {
+    background-color: rgba(0,0,0,.2);
+}

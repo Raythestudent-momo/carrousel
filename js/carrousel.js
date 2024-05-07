@@ -40,6 +40,42 @@
         })
     }
 
+    let carrousel__precedent = document.querySelector('.carrousel__precedent')
+    carrousel__precedent.addEventListener('click', function(){
+        let carrousel__form = document.querySelector('.carrousel__form');
+        let carrousel__input = carrousel__form.querySelectorAll('.carrousel__input');
+        let id = 0
+        for (const [index, elm] of Array.from(carrousel__input).entries()) {
+            if(elm.checked){
+                id = index - 1
+                if(id < 0){
+                    id = carrousel__input.length - 1
+                }
+                break
+            }
+        }
+        carrousel__input[id].checked = true
+        carrousel__input[id].dispatchEvent(new Event('change'))
+    })
+
+    let carrousel__suivant = document.querySelector('.carrousel__suivant')
+    carrousel__suivant.addEventListener('click', function(){
+        let carrousel__form = document.querySelector('.carrousel__form');
+        let carrousel__input = carrousel__form.querySelectorAll('.carrousel__input');
+        let id = 0
+        for (const [index, elm] of Array.from(carrousel__input).entries()) {
+            if(elm.checked){
+                id = index + 1
+                if(id >= carrousel__input.length){
+                    id = 0
+                }
+                break
+            }
+        }
+        carrousel__input[id].checked = true
+        carrousel__input[id].dispatchEvent(new Event('change'))
+    })
+
     bouton.addEventListener('mousedown', function(){
         carrousel.classList.add('carrousel--ouvrir')
     })
