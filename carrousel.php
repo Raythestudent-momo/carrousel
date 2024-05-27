@@ -32,13 +32,15 @@ function genere_html(){
     /////////////////////////////////////// HTML
     // Le conteneur d'une boîte
     
-       $contenu = '<button class="bouton__ouvrir">Ouvrir</button>
-       <div class="carrousel">
-       <button class="carrousel__x">X</button>
-       <figure class="carrousel__figure"></figure>
-       <form class="carrousel__form"></form>
-       </div>';
-       return $contenu;
+        $contenu = '<button class="bouton__ouvrir">Ouvrir</button>
+        <div class="carrousel">
+        <button class="carrousel__x">X</button>
+        <figure class="carrousel__figure"></figure>
+        <form class="carrousel__form"></form>
+        <button class="carrousel__precedent"><</button>
+        <button class="carrousel__suivant">></button>
+        </div>';
+        return $contenu;
    }
 
 add_shortcode('carrousel', 'genere_html');
